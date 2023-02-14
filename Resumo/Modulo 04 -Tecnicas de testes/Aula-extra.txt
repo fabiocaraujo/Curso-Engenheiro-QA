@@ -1,0 +1,12 @@
+
+
+1 - QA desenvolve os testes de caixa preta (onde não se tem acesso aos códigos)
+    1.1 - Os testes de caixa branca geralmente são executados pelos desenvolvedores.
+
+2 - Partição de equivalência: 
+    2.1 - Particionar algum valor da regra de negócio ex:
+            Caixa rápido de mercado passar no máximo 20 itens
+            Fazer 3 testes:
+                1 testes para valores < 20 (válido)
+                2 teste para o valor 20 (válido)
+                3 teste para valores > que 20 (inválido)
