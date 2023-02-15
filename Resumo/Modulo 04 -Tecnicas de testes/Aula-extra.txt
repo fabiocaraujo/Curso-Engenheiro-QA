@@ -1,12 +1,41 @@
 
 
-1 - QA desenvolve os testes de caixa preta (onde não se tem acesso aos códigos)
+1 - QA desenvolvem os testes de caixa preta (onde não se tem acesso aos códigos)
     1.1 - Os testes de caixa branca geralmente são executados pelos desenvolvedores.
 
-2 - Partição de equivalência: 
-    2.1 - Particionar algum valor da regra de negócio ex:
-            Caixa rápido de mercado passar no máximo 20 itens
-            Fazer 3 testes:
-                1 testes para valores < 20 (válido)
-                2 teste para o valor 20 (válido)
-                3 teste para valores > que 20 (inválido)
+2 - Técnica  de Partição de equivalência --> Particionar algum valor da regra de negócio ex:
+    2.1 - Caixa rápido de mercado passar no máximo 20 itens
+        Fazer 3 testes para cobrir 100%
+            1 testar para valores < 20 (válido)
+            2 testar para o valor = 20 (válido)
+            3 testar para valores > que 20 (inválido)
+    2.2 - Obrigatoriedade de voto de pessoas com idade entre 18 a 70 anos
+        Fazer 5 testes para cobrir 100%
+            1 testar idades < 18 anos (inválido)
+            2 testar idade = 18 anos (válido)
+            3 testar uma idade > 18 anos e < 70 anos (válido)
+            4 testar idade = 70 anos (válido)
+            5 testar idade > 70 anos (inválido)
+
+3 - Técnica de Análise do valor limite ---> busca o valor limite anterior e posterior ex:
+    3.1 - Caixa rápido de mercado passar no máximo 20 itens
+        Fazer 3 testes para cobrir 100%
+            1 testar valor 19 (válido)
+            2 testar valor 20 (válido)
+            3 testar valores 21 (inválido)
+    3.2 - Obrigatoriedade de voto de pessoas com idade entre 18 a 70 anos
+        Fazer 5 testes para cobrir 100%
+            1 testar 17 anos (inválido)
+            2 testar 18 anos (válido)
+            3 testar 19 anos (válido)
+            4 testar 69 anos (válido)
+            5 testar 70 anos (válido)
+            6 testar 71 anos (inválido)
+
+4 - Técnica de Análise do valor limite com valores flutuantes ---> busca o valor limite anterior e posterior ex:
+    4.1 - Valor >= R$ 79,00 ganha frete grátis.
+        1 testar valor R$ 78,99 (inválido)
+        2 testar valor R$ 79,00 (válido)
+        3 testar valor R$ 79,01 (válido)
+
+5 - Técnica tabela de decisão ---> Tabelas do ecxel anexo na pasta
