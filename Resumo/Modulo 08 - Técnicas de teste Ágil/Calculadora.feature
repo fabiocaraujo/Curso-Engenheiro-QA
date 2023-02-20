@@ -6,4 +6,6 @@ Quero utilizar a calculadora deo sistema
 Para realizar meus cálculos
 
 Cenario: Calcular números
-Dado que 
+Dado que eu acesse a calculadora
+Quando eu digitar a equação 2 + 2
+Então o resultado será 4
