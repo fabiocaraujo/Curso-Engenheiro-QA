@@ -15,7 +15,7 @@
             Então o produto deve ser adiciinado ao carrinho
 
             Esquema do Cenario: Autenticações inválidas
-            Quando eu inserir o <cor>, <tamanho> e <quantidade>
+            Quando eu inserir a <cor>, <tamanho> e <quantidade>
             E clicar em "comprar"
             Então deve exibir <mensagem>
 
