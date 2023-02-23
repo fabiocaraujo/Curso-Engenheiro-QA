@@ -12,4 +12,43 @@
 4 Ramificações / criando do zero:
     4.1 Crie uma nova pasta no seu repositório:
         mkdir aula-ramificacao
+    4.2 Entre dentro da pasta:
+        cd aula-ramificacao
+    4.3 Entre no Github e crie um novo repositório (nesse exemplo vou criar com o mesmo nome da pasta do repositório no computador)
+        Github/repositórios/new...
+        Siga os passos que o github irá sugerir (copiando os comandos e colando na terminal do Visual Studi Code ---> um comando por vez, dentro da pasta com o mesmo nome)
+            echo "# aula-ramificacao" >> README.md
+            git init
+            git add README.md
+            git commit -m "first commit"
+            git branch -M main
+            git remote add origin https://github.com/Rodrigo-Tozatti/aula-ramificacao.git
+            git push -u origin main
+    4.4 Crie uma nova Branch:
+        git branch funcionalidade01
+        * Obs: para saber quantas branch tem no repositório basta digitar: git branch
+        Para trocar de branch: git checkout "nome da branch" ---> sem aspas
+    4.5 Fique na branch funcionalidade01 e crie um arquinvo chamado "index.htm" dentro da pasta "aula-ramificacao"
+        Clique "!" e clique em ok para criar um template de HTML ---> troque o título por outro nome desejado.
+        Salve o arquivo
+        Faça o processo de subir o arquivo no Github (git status/git add ./git commit -m "---"/git push origin funcionalidade01)
+        Após subir o arquinvo na branch funcionalidade01 troque de branch (git checkout main) verifique que o arquivo index sumiu, pois está salvo apenas na outra branch.
+    4.6 Junção das banch.
+        Entre na branch Main e digite: git merge funcionalidade01
+    4.7 Deletar uma branch.
+        Crie uma branch nova ex: git branch funcionalidade02
+        Deletando: git branch -d funcionalidade02
+    4.8 Criar uma branch e entrar automaticamente / fazer alterações no index e subir
+        git checkout -b funcionalidade03
+        Faça uma alteração no código do arquivo index (obs: o arquivo index vai para a branch nova pois o git entende que é a versão mais recente)
+        Obs: sempre que alterar a branch sem subir o commit das alterações essas alterações irão para a branch que vc entrou.
+        Faça o processo de subir o arquivo no Github (git status/git add ./git commit -m "---"/git push origin funcionalidade03)
+    4.9 Subir a alteração somente para a branch "main"
+        Entre na branch main (git checkout main)
+        Digite: git merge funcionalidade03
+        Suba a alteração: git push origin main
         
+
+
+
+
