@@ -1,0 +1,15 @@
+
+1 git pull (atualizar projeto)
+
+2 git reset (volta um passo antes - como se fosse um ctr Z)
+
+3 gitignore:
+    3.1 crie o arquivo com o nome ".gitignore"
+    3.2 para ignorar uma pasta digite o nome da pasta seguida de / ---> ex: logs/
+        3.2.1 tudo que estiver dentro dessa pasta será ignorado
+    3.3 para ignorar um arquivo específico digite o nome completo com a etenção ---> ex: exemplo01.txt
+
+4 Ramificações / criando do zero:
+    4.1 Crie uma nova pasta no seu repositório:
+        mkdir aula-ramificacao
+        
