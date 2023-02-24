@@ -25,5 +25,9 @@
             cypress\e2e\spec.cy.js
             cypress\e2e\seu-projeto.spec.cy.js
 
+4 Instalando dados faker
+    4.1 copiar a linha de comando de instalação no site: https://www.npmjs.com/package/@faker-js/faker
+        4.1.2 digitar a linha de comando pelo terminal no projeto: npm i @faker-js/faker
+
 
 
