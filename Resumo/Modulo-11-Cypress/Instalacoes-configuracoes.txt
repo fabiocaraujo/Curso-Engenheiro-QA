@@ -1,0 +1,29 @@
+
+* PREPARAÇÃO DO AMBINETE *
+
+1 NodeJS: https://nodejs.org/en/ (instalar a versao LTS *mais confiável*)
+
+2 Visual Studio Code:Visual Studo Code: https://code.visualstudio.com/download
+    Plugins para o Visual Studio Code
+        Cucumber (Gherkin)
+        Es6 Mocha Snippets
+        Bracket Pair Colorizer
+        Cypress Snippets
+        Material Icon Thmeme
+        Visual Studio Intellicode
+
+3 Criar um projeto Cypress
+    3.1 - Crie um repositório no Github (obs: no gitignore selecione a opção Node)
+    3.2 - Faça o clone no repositório que irá trabalhar
+    3.3 - Criar um projeto Node: npm init -y
+    3.4 - Instalar Cypress
+        3.4.1 - Escolha a versão desejada do Cypress no link: https://www.npmjs.com/package/cypress?activeTab=versions
+    3.5 - Abrir o Cypress: npx cypress open
+    3.6 - Criar um projeto
+        3.6.1 - Com o Cypress aberto clique em "Create new spec" 
+        3.6.2 - Inclua o nome do projeto na linha de comando que aparecerá separando com um ponto ".":
+            cypress\e2e\spec.cy.js
+            cypress\e2e\seu-projeto.spec.cy.js
+
+
+
