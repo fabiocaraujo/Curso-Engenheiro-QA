@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #Dados e senhas sensíveis
-D:\REPOSITORIO\Curso-Engenheiro-QA\Exercicios\Modulos-11-12-Cypress\cypress\fixtures\dados.json
+../dados.json
