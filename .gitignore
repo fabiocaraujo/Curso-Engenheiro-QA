@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #Dados e senhas sensíveis
-.fixtures/
+dados.json
