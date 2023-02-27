@@ -14,19 +14,11 @@ describe('Funcionalidadae pré-cadastro', () => {
     var email = faker.internet.email(firstName)
     var novaSenha = faker.internet.password()
 
-    cy.get('#reg_email').type(usuario)
-    cy.get('#reg_password').type(senha)
-    cy.get(':nth-child(4) > .button').click()
+    cy.novoUsuario(usuario, senha)
 
     cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
-    cy.get('#account_first_name').type(firstName)
-    cy.get('#account_last_name').type(lastName)
-    cy.get('#account_display_name').clear().type(firstName + lastName)
-    cy.get('#account_email').clear().type(email)
-    cy.get('#password_current').type(senha)
-    cy.get('#password_1').type(novaSenha)
-    cy.get('#password_2').type(novaSenha)
-    cy.get('.woocommerce-Button').click()
+
+    cy.preCadastro(firstName, lastName, email, senha, novaSenha)
 
     cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
   });

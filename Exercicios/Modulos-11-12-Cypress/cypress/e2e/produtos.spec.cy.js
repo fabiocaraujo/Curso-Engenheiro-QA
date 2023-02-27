@@ -4,22 +4,15 @@ describe('Funcionalidade página de produtos', () => {
     cy.visit('produtos/')
   });
 
-  it('Deve selecionar um produto da lista', () => {
-    cy.get('.product-block')
-    //.first().click()
-    //.last().click()
-    //.eq(5).click()
-    .contains('Abominable Hoodie').click()
-  })
-
-  it.only('Deve adicionar produto ao carrinho', () => {
+  it.only('Deve selecionar um produto e adicionar produto ao carrinho', () => {
     var quantidade = 5
+    var produto = 'Abominable Hoodie'
+    var tamanho = 'M'
+    var cor = 'Green'
 
-    cy.get('.product-block').contains('Abominable Hoodie').click()
-    cy.get('.button-variable-item-M').click()
-    cy.get('.button-variable-item-Blue').click()
-    cy.get('.input-text').clear().type(quantidade)
-    cy.get('.single_add_to_cart_button').click()
+    cy.selecionarProduto(produto)
+
+    cy.addProdutos(quantidade, tamanho, cor)
 
     cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
     cy.get('.woocommerce-message').should('contain', quantidade + ' × “Abominable Hoodie”')
