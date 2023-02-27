@@ -7,9 +7,7 @@ describe('Funcionalidade Login', () => {
   });
 
   it('Deve fazer login com sucesso', () => {
-    cy.get('#username').type(dados.usuario_01)
-    cy.get('#password').type(dados.senha_01, {log:false})
-    cy.get('.woocommerce-form > .button').click()
+    cy.login(dados.usuario_01, dados.senha_01)
 
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac')
   });

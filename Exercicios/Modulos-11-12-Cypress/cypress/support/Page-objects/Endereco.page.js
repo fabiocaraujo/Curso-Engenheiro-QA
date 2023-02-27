@@ -1,0 +1,10 @@
+class EnderecoPage {
+
+    editarEnderecoFaturamento() {
+
+    }
+
+    editarEnderecoEntrega() {
+        
+    }
+}

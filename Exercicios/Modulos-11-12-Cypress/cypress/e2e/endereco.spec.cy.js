@@ -1,4 +1,5 @@
 var dados = require ('../fixtures/dados.json')
+import EnderecoPage from '../support/Page-objects/Endereco.page'
 
 describe('Funcionalidade endereço - Faturamento e Entrega', () => {
 
