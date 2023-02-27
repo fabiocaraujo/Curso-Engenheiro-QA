@@ -1,12 +1,14 @@
+var dados = require ('../fixtures/dados.json')
+
 describe('Funcionalidade Login', () => {
 
   beforeEach(() => {
-    cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+    cy.visit('minha-conta/')
   });
 
   it('Deve fazer login com sucesso', () => {
-    cy.get('#username').type('aluno_ebac@teste.com')
-    cy.get('#password').type('teste@teste.com')
+    cy.get('#username').type(dados.usuario)
+    cy.get('#password').type(dados.senha, {log:false})
     cy.get('.woocommerce-form > .button').click()
 
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac')

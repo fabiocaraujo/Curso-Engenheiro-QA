@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 describe('Cadastrar usuário', () => {
 
   beforeEach(() => {
-    cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+    cy.visit('minha-conta/')
   });
 
   it('Cadastrar usuario com sucesso', () => {
