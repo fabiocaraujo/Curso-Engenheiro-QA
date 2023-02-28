@@ -26,7 +26,7 @@ describe('Funcionalidade endereço - Faturamento e Entrega', () => {
     cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
   });
 
-  it.only('Deve preeencher endereco de entrega com sucesso - dados fixtures', () => {
+  it('Deve preeencher endereco de entrega com sucesso - dados fixtures', () => {
     EnderecoPage.editarEnderecoEntrega(
       endereco[1].nome,
       endereco[1].sobrenome,

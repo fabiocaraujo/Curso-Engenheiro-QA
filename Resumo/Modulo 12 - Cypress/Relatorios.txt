@@ -1,0 +1,33 @@
+
+* RELATÓRIOS *
+
+1 Rodar os testes em modo hedless --> npx cypress run
+2 Incluindo scripts de execução no "package.json"
+    Obs:    2.1 sempre colocar uma "," virgula no script anterior.
+            2.2 entre aspas duplas escreva a abreviação do comando e na sequência inclua ":" dois pontos ex: "cy.open":
+            2.3 na sequência entre aspas duplas "..." escreva o comando original ex: "npx cypress open"
+
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy.open": "npx cypress open",
+    "cy.run": "npx cypress run --browser chrome",
+    "cy.relatorio": "npx cypress run --record --key 3e147f81-6e39-4bf6-b960-53ac0c918c71"
+  },
+3 Abra o Cypress clique na opção "Runs"
+4 Clique no botão "Connect to Cypress Cloud"
+5 Clique no botão "Login in"
+6 Abrirá uma nova tela pedindo para fazer o login com a conta que já tenho ou escolher fazer login por outro sistema ex: Github.
+    6.1 Escolha uma das opções (recomendado o Github)
+7 Caso for a primeira conexão irá pedir alguns dados (Nome da organização e Nome do projeto)
+8 Clique em "Setup Project"
+9 Copie a linha de comando fornecida e crie um script de execução no package.json
+    9.1 "cy.relatorio": "npx cypress run --record --key 3e147f81-6e39-4bf6-b960-53ac0c918c71"
+10 Escolha o projeto que deseja fazer o relatorio
+11 Irá abrir uma nova tela com os relatórios de todas as funcionalidades
+    11.1 Navegue pelas opções desejadas
+
+
+
+
+
+

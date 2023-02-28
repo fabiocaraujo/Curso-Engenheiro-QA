@@ -4,7 +4,7 @@ describe('Funcionalidade página de produtos', () => {
     cy.visit('produtos/')
   });
 
-  it.only('Deve selecionar um produto e adicionar produto ao carrinho', () => {
+  it('Deve selecionar um produto e adicionar produto ao carrinho', () => {
     var quantidade = 5
     var produto = 'Abominable Hoodie'
     var tamanho = 'M'
