@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "cypress": "^12.5.1"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy.open": "npx cypress open",
+    "cy.run": "npx cypress run --browser chrome"
+  }
+}
