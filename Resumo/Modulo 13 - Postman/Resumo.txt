@@ -1,0 +1,37 @@
+1 CRIAR PREFIXO GLOBAL DO LOCALHOST
+    1.1 Clicar em "Enviroments" na lateral esquerda do Postman
+    1.2 Clique em "Global"
+    1.3 Crie uma variável, nesse caso criei com o nome "Local"
+    1.4 Em Imput Value copie o localhost que deseja que seja utilizado nos testes ex.: http://localhost:3000/
+    1.5 Para utilizar digite {{local}} e na sequência o que desejar ex.: {{local}}usuario
+
+2 CRIAR VARIÁVEL PARA O TOKEN
+    2.1 Clicar em "Enviroments" na lateral esquerda do Postman
+    2.2 Clique em "Global"
+    2.3 Crie uma variável com o nome Token
+    2.4 Vá no teste que gera o token... nesse caso o teste "Post Login de Usuário"
+    2.5 Abra a janela "Tests"
+    2.6 Escreva a linha de comando:
+        2.6.1 const resposta = pm.response.json();
+    2.7 abaixo dessa linha de comando em Snippets clique em "Set a Global Variable"
+        2.7.1 pm.globals.set("variable_key", "variable_value");
+        2.7.2 troque o comando "variable_key" pela variável global que foi criada "token"
+        2.7.3 rodo o teste de login de usuário para verificar o nome que é atribuido ao token --> nesse caso é "authorization"
+        2.7.4 troque a linha de comando "variable_value" pelo nome da constante que foi criada passando o nome da autorização ex:
+            pm.globals.set("token", resposta.authorization);    
+    2.8 Rode o teste novamente e verifique se foi gravado o token na variável de ambiente.
+        2.8.1 Caso não apareça, feche a janela do Global (salvando) rode o teste e abra novamente.
+
+3 PASSANDO O TOKEN AUTOMÁTICO PARA OS TESTES QUE EXIGEM TOKEN
+    3.1 Clique no teste que exija o token, nesse caso "PUT editar produto"
+    3.2 Vá na aba de authorization, caso já tenha passado de forma manual e retire o token (deixando na primeira opção)
+    3.3 Vá na aba "Heders" crie uma variável "Authorization" e atribua o valor {{token}}
+    3.4 Agora é só rodar o teste... faça isso para todos os testes que exijam token
+
+4 RELATÓRIO UTILIZANDO NEWMAN NO Postman
+    4.1 Primeiro exporte uma colection
+        4.1.2 Escolha uma coleção, clique nos ... (Três pontos do lado direito) e escolha a opção "Export"
+        4.1.3 Utilize a opção recomendada "Collection v2.1 (recommended)" e clique em exportar
+        4.1.4 Abra o terminal para a instalação do Newman
+            Digite a linha de comando: npm install -g newman
+
