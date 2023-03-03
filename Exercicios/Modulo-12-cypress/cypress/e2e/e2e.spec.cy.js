@@ -15,17 +15,57 @@ describe('TESTE E2E EBACSHOP - COMPRA DE PRODUTOS ', () => {
   beforeEach(() => {
     cy.visit('produtos')
     cy.login(dadosSensiveis.usuario, dadosSensiveis.senha)
+    cy.get('#primary-menu > .menu-item-629 > a').click()
   });
 
-  it('Deve selecionar produtos e adicionar ao carrinho', () => {
+  it('Deve selecionar produto 01/04 e adicionar ao carrinho', () => {
     var produto = 'Abominable Hoodie'
     var tamanho = 'M'
     var cor = 'Blue'
     var quantidade = '4'
 
+    cy.get(':nth-child(1) > .page-numbers').click()
+
     cy.selProduto(produto, tamanho, cor, quantidade)
     cy.get('.product-name > a').should('contain', produto)
   });
+
+  it('Deve selecionar produto 02/04 e adicionar ao carrinho', () => {
+    var produto = 'Ajax Full-Zip Sweatshirt'
+    var tamanho = 'XL'
+    var cor = 'Blue'
+    var quantidade = '2'
+
+    cy.get(':nth-child(1) > .page-numbers').click()
+
+    cy.selProduto(produto, tamanho, cor, quantidade)
+    cy.get('.product-name > a').should('contain', produto)
+  });
+
+  it('Deve selecionar produto 03/04 e adicionar ao carrinho', () => {
+    var produto = 'Arcadio Gym Short'
+    var tamanho = '33'
+    var cor = 'Red'
+    var quantidade = '1'
+
+    cy.get(':nth-child(1) > .page-numbers').click()
+
+    cy.selProduto(produto, tamanho, cor, quantidade)
+    cy.get('.product-name > a').should('contain', produto)
+  });
+
+  it('Deve selecionar produto 04/04 e adicionar ao carrinho', () => {
+    var produto = 'Autumn Pullie'
+    var tamanho = 'M'
+    var cor = 'Green'
+    var quantidade = '2'
+
+    cy.get(':nth-child(2) > .page-numbers').click()
+
+    cy.selProduto(produto, tamanho, cor, quantidade)
+    cy.get('.product-name > a').should('contain', produto)
+  });
+
 
   it('Deve conferir produto e ir para checkout', () => {
     cy.checkout()
