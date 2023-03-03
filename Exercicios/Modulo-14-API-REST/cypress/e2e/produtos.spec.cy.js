@@ -1,6 +1,17 @@
+import { faker } from '@faker-js/faker';
+
 describe('Testes API produtos Serverest', () => {
 
-  it('Deve fazer login com sucesso', () => {
+  var token
+
+  before(() => {
+    var email = 'rodrigo01.fera@ebac.br'
+    var password = 'rodrigo.teste'
+
+    cy.loginToken(email, password).then(tkn => { token = tkn })
+  });
+
+  it('Deve listar produtos cadastrados', () => {
     cy.request({
       method: 'GET',
       url: 'Produtos',
@@ -12,21 +23,43 @@ describe('Testes API produtos Serverest', () => {
     })
   })
 
-  it.only('Cadastrar produtos', () => {
+  it('Cadastrar produtos válido', () => {
+    //var produto = faker.vehicle.vehicle() //---> cadastrndo produtos diferentes com dados faker
+    var produto = `Produto EBAC ${Math.floor(Math.random() * 1000)}` //---> cadastrndo produtos diferentes com número randômico
+
     cy.request({
       method: 'POST',
-      url: 'http://localhost:3000/Produtos',
+      url: 'Produtos',
       body: {
-        "nome": "Telefone Intelbras_01",
+        "nome": produto, //---> cadastrndo produtos diferentes com dados faker e com número randômico
         "preco": 150,
         "descricao": "Telefone fixo",
         "quantidade": 300
       },
-      headers: {authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvZHJpZ28wMS5mZXJhQGViYWMuYnIiLCJwYXNzd29yZCI6InJvZHJpZ28udGVzdGUiLCJpYXQiOjE2Nzc4MTExMzEsImV4cCI6MTY3NzgxMTczMX0.SzV3URHJixmnIvXYGtzjsMNMTT9zfHLOp_33IO3eZc4'}
+      headers: { authorization: token }
     }).then((response) => {
       expect(response.status).to.equal(201)
       expect(response.body.message).to.equal('Cadastro realizado com sucesso')
     })
   })
+
+  it('Deve cadastrar produto inválido (com nome existente)', () => {
+    cy.request({
+      method: 'POST',
+      url: 'Produtos',
+      body: {
+        "nome": "IMac Verde",
+        "preco": 150,
+        "descricao": "Descktop",
+        "quantidade": 300
+      },
+      headers: { authorization: token },
+      failOnStatusCode: false
+    }).then((response) => {
+      expect(response.status).to.equal(400)
+      expect(response.body.message).to.equal('Já existe produto com esse nome')
+    })
+
+  });
 
 })
