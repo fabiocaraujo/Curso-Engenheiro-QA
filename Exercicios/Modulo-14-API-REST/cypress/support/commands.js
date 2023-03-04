@@ -38,3 +38,18 @@ Cypress.Commands.add('loginToken', (email, password) => {
         return response.body.authorization
     })
 })
+
+Cypress.Commands.add('cadProduto', (token, produto, preco, descricao, quantidade) => {
+    cy.request({
+        method: 'POST',
+        url: 'Produtos',
+        body: {
+            "nome": produto,
+            "preco": preco,
+            "descricao": descricao,
+            "quantidade": quantidade
+        },
+        headers: { authorization: token },
+        failOnStatusCode: false // linha de comando para validar um teste de erro (cenário negativo)
+    })
+})
