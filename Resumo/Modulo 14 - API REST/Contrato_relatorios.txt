@@ -1,0 +1,9 @@
+1 INSTALANDO JOI 
+1.1 instalar com o comando: npm install joi
+
+2 PREPARANDO AMBIENTE PARA RELATORIOS
+2.1 instalar MOCHA com o comando: npm instal mocha
+2.2 instalar MOCHA Awesome com o comando: npm instal mochawesome
+2.3 instalar MOCHA Awesome-merge com o comando: npm instal mochawesome-merge
+2.4 instalar MOCHA Awesome-report-generator com o comando: npm instal mochawesome-report-generator
+2.5 instalar cypress-multi-reporters com o comando:npm install cypress-multi-reporters

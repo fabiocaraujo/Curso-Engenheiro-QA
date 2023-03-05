@@ -1,11 +1,18 @@
 {
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
-    "cypress": "^12.5.1"
+    "cypress": "^12.5.1",
+    "cypress-multi-reporters": "^1.6.2",
+    "joi": "^17.8.3",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.2",
+    "mochawesome-report-generator": "^6.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy.open": "npx cypress open",
-    "cy.run": "npx cypress run --browser chrome"
+    "cy.run": "npx cypress run --browser chrome",
+    "cy.report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
   }
 }
