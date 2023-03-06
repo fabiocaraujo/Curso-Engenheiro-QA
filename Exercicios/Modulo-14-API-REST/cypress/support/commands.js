@@ -53,3 +53,19 @@ Cypress.Commands.add('cadProduto', (token, produto, preco, descricao, quantidade
         failOnStatusCode: false // linha de comando para validar um teste de erro (cenário negativo)
     })
 })
+
+Cypress.Commands.add('cadUsuario', (nome, email, senha) => {
+    cy.request({
+        method: 'POST',
+        url: 'usuarios',
+        body: {
+            "nome": nome,
+            "email": email,
+            "password": senha,
+            "administrador": "true"
+        }
+    }).then((response) => {
+        expect(response.status).to.equal(201)
+        expect(response.body.message).to.equal('Cadastro realizado com sucesso')
+    })
+})

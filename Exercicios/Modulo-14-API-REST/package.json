@@ -13,6 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy.open": "npx cypress open",
     "cy.run": "npx cypress run --browser chrome",
-    "cy.report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
+    "serverest": "npx serverest",
+    "cy.report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
   }
 }
